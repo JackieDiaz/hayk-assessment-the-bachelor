@@ -4,8 +4,7 @@ def get_first_name_of_season_winner(data, season)
   winner = {}
   ladies = data[season]
   winner = ladies.find{|lady| lady["status"] == "Winner"}
-  winner_name = winner["name"].split(' ')
-  winner_name[0]
+  winner_name = winner["name"].split(' ')[0]
 end
 
 def get_contestant_name(data, occupation)
@@ -56,6 +55,8 @@ def get_occupation(data, hometown)
     end 
  hometown_contestant["occupation"]
 end
+arr = [[1,2,3],["a","b","c"]]
+arr.flatten
 
 
 def get_average_age_for_season(data, season)
