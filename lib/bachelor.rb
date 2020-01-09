@@ -49,13 +49,12 @@ end
    # return a counter of the number of contestants who are from that hometown.
 
 def get_occupation(data, hometown)
-  data.map do |season, contestants| 
+ hometown_contestant = data.map do |season, contestants| 
     contestants
   end.flatten.find  do |contestant| 
-    if  contestant["hometown"] == hometown
-      return contestant["occupation"]
+     contestant["hometown"] == hometown
     end 
-      end 
+ hometown_contestant
 end
 
 
