@@ -54,7 +54,7 @@ def get_occupation(data, hometown)
   end.flatten.find  do |contestant| 
      contestant["hometown"] == hometown
     end 
- hometown_contestant
+ hometown_contestant["occupation"]
 end
 
 
