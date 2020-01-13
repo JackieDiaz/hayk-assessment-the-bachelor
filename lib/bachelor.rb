@@ -1,14 +1,15 @@
 require 'pry'
 
+def contestant_info
+  data.values.flatten
+end 
+
 def get_first_name_of_season_winner(data, season)
-  winner = {}
-  ladies = data[season]
-  winner = ladies.find{|lady| lady["status"] == "Winner"}
-  winner_name = winner["name"].split(' ')[0]
+  winner = data[season].find{|lady| lady["status"] == "Winner"}
+  winner_name = winner["name"].split[0]
 end
 
 def get_contestant_name(data, occupation)
-  arr = []
   data.each do |season, attributes| 
     attributes.each do |job| 
       if job["occupation"] == occupation
@@ -55,10 +56,12 @@ def get_occupation(data, hometown)
     end 
  hometown_contestant["occupation"]
 end
-arr = [[1,2,3],["a","b","c"]]
-arr.flatten
+
 
 
 def get_average_age_for_season(data, season)
-  # code here
+  age_array = data[season].map{|cast| cast["age"].to_i}
+  .flatten
+ age_num = age_array.reduce{|sum, age| sum +age}/ age_array.length.to_f
+  age_num.round
 end
